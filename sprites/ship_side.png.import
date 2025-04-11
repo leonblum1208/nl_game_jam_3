@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpkpcr062fc6a"
-path="res://.godot/imported/great_icon.svg-6c0d7969bc0847d8d3570ee4fc513b7c.ctex"
+uid="uid://io3bud0ykm3q"
+path="res://.godot/imported/ship_side.png-2d4f97cc8b6f9698157f39183c652f6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://great_icon.svg"
-dest_files=["res://.godot/imported/great_icon.svg-6c0d7969bc0847d8d3570ee4fc513b7c.ctex"]
+source_file="res://sprites/ship_side.png"
+dest_files=["res://.godot/imported/ship_side.png-2d4f97cc8b6f9698157f39183c652f6a.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
