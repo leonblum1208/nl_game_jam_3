@@ -5,7 +5,7 @@ extends CharacterBody2D
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
-	#TODO move animations out of input maybe
+	#TODO consider moving sprite stuff out of get_input
 	if (input_direction.y > 0):
 		$Sprite2D.texture = ResourceLoader.load("res://sprites/ship_down.png")
 	elif (input_direction.y < 0):
@@ -17,6 +17,6 @@ func get_input():
 		$Sprite2D.texture = ResourceLoader.load("res://sprites/ship_side.png")
 		$Sprite2D.scale.x = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
