@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://lvbytquniiwo"]
+[gd_scene load_steps=4 format=3 uid="uid://lvbytquniiwo"]
 
 [ext_resource type="Script" uid="uid://ciwbrqbqtd3f" path="res://scenes/ui/main_menu.gd" id="1_6jbdy"]
 [ext_resource type="PackedScene" uid="uid://b42g4vgf3pn5a" path="res://scenes/ui/MenuBackground.tscn" id="1_vjtqc"]
+[ext_resource type="PackedScene" uid="uid://c0tgighiwiha7" path="res://scenes/globals/GameState.tscn" id="2_iwbf0"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6jbdy")
+
+[node name="GameState" parent="." instance=ExtResource("2_iwbf0")]
 
 [node name="RiverLandMenuBackground" parent="." instance=ExtResource("1_vjtqc")]
 position = Vector2(-1137, -607)
