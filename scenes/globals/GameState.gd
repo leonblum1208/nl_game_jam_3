@@ -2,6 +2,11 @@ extends Node
 
 var levelsCompleted = []
 var money = 700
+
+var health:float = 100:
+	set(value):
+		health = value
+		print("Boats health is: %d" % [health])
 var upgrades: Dictionary[String, int] = {
 	"Speed": 0,
 	"Money": 0,
@@ -25,6 +30,7 @@ func buy_upgrade(upgrade_name: String):
 	if (money > upgrades.get(upgrade_name)):
 		money -= 100
 		upgrades.set(upgrade_name, upgrades.get(upgrade_name) + 1)
+		Audio.play_sfx(Audio.sfx.MONEY)
 		emit_signal("game_state_update")
 
 func get_upgrade_price(upgrade_name: String) -> int:

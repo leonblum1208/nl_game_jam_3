@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://ddv46mqqfqt2o"]
+[gd_scene load_steps=7 format=4 uid="uid://ddv46mqqfqt2o"]
 
 [ext_resource type="TileSet" uid="uid://kvu55xeebqen" path="res://scenes/objects/river_land_tileset.tres" id="1_3yp7r"]
 [ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="2_4umai"]
+[ext_resource type="Script" uid="uid://b7tweus2rhm1e" path="res://scenes/objects/path_follow_2d.gd" id="2_d054v"]
+[ext_resource type="PackedScene" uid="uid://bypbr28dlfhr8" path="res://scenes/levels/sliding_window.tscn" id="3_04kny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yp7r"]
 size = Vector2(346, 39)
@@ -33,8 +35,14 @@ shape = SubResource("RectangleShape2D_3yp7r")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_d054v")
 
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1, 866)
+rotation = -1.56996
+loop = false
+script = ExtResource("2_d054v")
+
+[node name="SlidingWindow" parent="Path2D/PathFollow2D" instance=ExtResource("3_04kny")]
+
 [node name="Ship" parent="." instance=ExtResource("2_4umai")]
 position = Vector2(-1, 863)
-
-[node name="Camera2D" type="Camera2D" parent="Ship"]
-zoom = Vector2(4, 4)
+speed = 100
