@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bnsxcansar7fc"]
 
 [ext_resource type="Script" uid="uid://bqkj7jpowsu5a" path="res://scenes/characters/ship.gd" id="1_gjfe0"]
-[ext_resource type="Texture2D" uid="uid://ce5uuuoerb6ox" path="res://sprites/Ship/ship1.png" id="2_xl753"]
+[ext_resource type="Texture2D" uid="uid://bv1re3lar1qnb" path="res://sprites/Ship/ship1.png" id="2_xl753"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xl753"]
 height = 48.0
