@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwip8cvjt802y"]
+[gd_scene load_steps=4 format=3 uid="uid://bwip8cvjt802y"]
 
 [ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="1_mn00y"]
+[ext_resource type="PackedScene" uid="uid://ca874jt6uoap" path="res://scenes/objects/stone.tscn" id="2_k3rtj"]
+[ext_resource type="PackedScene" uid="uid://d4fjwoea37i2e" path="res://scenes/objects/river_land_1.tscn" id="3_p0fye"]
 
 [node name="Level" type="Node2D"]
 
+[node name="RiverLand1" parent="." instance=ExtResource("3_p0fye")]
+
+[node name="Stone" parent="." instance=ExtResource("2_k3rtj")]
+position = Vector2(571, 297)
+
 [node name="Ship" parent="." instance=ExtResource("1_mn00y")]
+position = Vector2(-20, -60)
+
+[node name="Camera2D" type="Camera2D" parent="Ship"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true

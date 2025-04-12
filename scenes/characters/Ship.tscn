@@ -3,10 +3,11 @@
 [ext_resource type="Script" uid="uid://bqkj7jpowsu5a" path="res://scenes/characters/ship.gd" id="1_gjfe0"]
 [ext_resource type="Texture2D" uid="uid://io3bud0ykm3q" path="res://sprites/ship_side.png" id="2_xl753"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl753"]
-size = Vector2(76.5, 89.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xl753"]
+radius = 80.514
 
 [node name="Ship" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_gjfe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,5 +15,5 @@ position = Vector2(66, 63)
 texture = ExtResource("2_xl753")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 64)
-shape = SubResource("RectangleShape2D_xl753")
+position = Vector2(65.5, 63.5)
+shape = SubResource("CircleShape2D_xl753")

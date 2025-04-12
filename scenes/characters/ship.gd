@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 400
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
 	#TODO consider moving sprite stuff out of get_input
 	if (input_direction.y > 0):
