@@ -5,12 +5,14 @@ enum sfx {
 	SPLASH,
 	MONEY,
 	DEATH,
+	YAY,
 }
 var files: Dictionary[sfx, Resource] = {
 	sfx.COLLISION: load("res://audio/ship_collision.mp3"),
 	sfx.SPLASH: load("res://audio/splash.mp3"),
 	sfx.MONEY: load("res://audio/money.mp3"),
 	sfx.DEATH: load("res://audio/scream.mp3"),
+	sfx.YAY: load("res://audio/yay.mp3"),
 }
 
 # credit:

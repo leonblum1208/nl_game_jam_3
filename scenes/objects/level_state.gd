@@ -13,6 +13,8 @@ func _on_body_entered(body: Node) -> void:
 	if (level_end_time > 0): #level is already over
 		return
 	elif (body.name == "Ship"):
+		Audio.play_sfx(Audio.sfx.YAY)
+		Engine.time_scale = 0.2
 		level_end_time = Time.get_ticks_msec()
 		var seconds_elapsed = (level_end_time - level_start_time) / 1000
 		match current_level:
@@ -30,4 +32,5 @@ func _on_body_entered(body: Node) -> void:
 
 func _process(_delta: float) -> void:
 	if (level_end_time and level_end_time < Time.get_ticks_msec() - 5_000):
+		Engine.time_scale = 1
 		get_tree().change_scene_to_file("res://scenes/ui/BetweenLevelsMenu.tscn")

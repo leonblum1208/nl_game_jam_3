@@ -30,6 +30,14 @@ func _on_game_state_update() -> void:
 	render_upgrades()
 
 func render_summary() -> void:
+	var random_number_from_1_to_3 = randi() % 3 + 1
+	match random_number_from_1_to_3:
+		1:
+			$Summary/Title.text = "Yay! ^_^"
+		2:
+			$Summary/Title.text = "Yeeeey :D"
+		3:
+			$Summary/Title.text = "Yaaay! \\o\\ /o/"
 	var last_level_completed = GameState.get_last_completed_level()
 	if (last_level_completed == null):
 		printerr("last_level_completed is null, can't show summary")
