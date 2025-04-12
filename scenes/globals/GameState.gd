@@ -30,6 +30,7 @@ func buy_upgrade(upgrade_name: String):
 	if (money > upgrades.get(upgrade_name)):
 		money -= 100
 		upgrades.set(upgrade_name, upgrades.get(upgrade_name) + 1)
+		Audio.play_sfx(Audio.sfx.MONEY)
 		emit_signal("game_state_update")
 
 func get_upgrade_price(upgrade_name: String) -> int:

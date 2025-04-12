@@ -5,6 +5,7 @@ var blink_timer := 0.0
 var continue_visible := true
 
 func _ready() -> void:
+	Audio.play_menu_music()
 	$Summary.visible = true
 	$Upgrades.visible = false
 	GameState.game_state_update.connect(Callable(self, "_on_game_state_update"))
