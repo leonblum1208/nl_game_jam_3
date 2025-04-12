@@ -2,6 +2,11 @@ extends Node
 
 var levelsCompleted = []
 var money = 700
+
+var health:float = 100:
+	set(value):
+		health = value
+		print("Boats health is: %d" % [health])
 var upgrades: Dictionary[String, int] = {
 	"Speed": 0,
 	"Money": 0,

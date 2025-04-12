@@ -13,7 +13,3 @@ position = Vector2(571, 297)
 
 [node name="Ship" parent="." instance=ExtResource("1_mn00y")]
 position = Vector2(-20, -60)
-
-[node name="Camera2D" type="Camera2D" parent="Ship"]
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
