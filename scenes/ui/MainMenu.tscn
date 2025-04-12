@@ -18,18 +18,26 @@ position = Vector2(-1137, -607)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Title" type="Label" parent="CanvasLayer"]
-offset_top = 206.0
-offset_right = 1152.0
-offset_bottom = 356.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 358.0
+offset_bottom = -569.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Game title"
 horizontal_alignment = 1
 
 [node name="How to start" type="Label" parent="CanvasLayer"]
-offset_top = 450.0
-offset_right = 1152.0
-offset_bottom = 522.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 744.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Press space to start"
