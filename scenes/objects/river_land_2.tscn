@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=4 uid="uid://6s6v0hpko7lh"]
+[gd_scene load_steps=8 format=4 uid="uid://6s6v0hpko7lh"]
 
 [ext_resource type="TileSet" uid="uid://kvu55xeebqen" path="res://scenes/objects/river_land_tileset.tres" id="1_k6i5m"]
 [ext_resource type="PackedScene" uid="uid://xl3om3lab0ws" path="res://scenes/characters/beaver.tscn" id="2_57q62"]
+[ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="3_q1gue"]
+[ext_resource type="Script" uid="uid://b7tweus2rhm1e" path="res://scenes/objects/path_follow_2d.gd" id="4_qm123"]
+[ext_resource type="PackedScene" path="res://scenes/levels/sliding_window.tscn" id="5_1c3bt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6i5m"]
 size = Vector2(259, 77)
+
+[sub_resource type="Curve2D" id="Curve2D_c7epx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 866, 0, 0, 0, 0, 0, -335)
+}
+point_count = 2
 
 [node name="RiverLand" type="Node2D"]
 
@@ -36,3 +45,20 @@ rotation = -0.389023
 [node name="Beaver3" parent="." instance=ExtResource("2_57q62")]
 position = Vector2(44, -40)
 rotation = 3.1155
+
+[node name="Ship" parent="." instance=ExtResource("3_q1gue")]
+position = Vector2(-5.75104, 0)
+rotation = -1.52729
+scale = Vector2(0.99988, 0.942037)
+skew = 0.0055232
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c7epx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-1, 866)
+rotation = -1.56996
+loop = false
+script = ExtResource("4_qm123")
+
+[node name="SlidingWindow" parent="Path2D/PathFollow2D" instance=ExtResource("5_1c3bt")]

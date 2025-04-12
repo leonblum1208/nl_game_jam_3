@@ -21,6 +21,8 @@ func print_game_state() -> void: #debugging
 	print("money: %d, levels completed: %d, upgrades: %s" % [money, levelsCompleted.size(), upgrades])
 	print("")
 
+func start_level():
+	health = 100 + 50 * upgrades.get("HP")
 
 func complete_level(moneyEarned: int, hp: int, seconds_under_par: int) -> void:
 	var multiplier = upgrades.get("Money") + 1
@@ -55,7 +57,7 @@ class CompletedLevel:
 	func _init(_cargo_money: int, hp: int, seconds_under_par: int, upgrade_level: int) -> void:
 		self.cargo_money = _cargo_money
 		self.hp_bonus = hp
-		self.time_bonus = seconds_under_par
+		self.time_bonus = seconds_under_par * 5
 		self.upgrade_multiplier = upgrade_level + 1
 		print(self.cargo_money)
 		self.total_money = (self.cargo_money + self.hp_bonus + self.time_bonus) * self.upgrade_multiplier

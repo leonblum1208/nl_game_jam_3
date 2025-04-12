@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwip8cvjt802y"]
 
-[ext_resource type="PackedScene" uid="uid://d4fjwoea37i2e" path="res://scenes/objects/river_land_1.tscn" id="3_p0fye"]
+[ext_resource type="Script" uid="uid://1qquuyecsenl" path="res://scenes/levels/level_loader.gd" id="1_k3rtj"]
 
-[node name="Level" type="Node2D"]
-
-[node name="RiverLand1" parent="." instance=ExtResource("3_p0fye")]
+[node name="LevelLoader" type="Node2D"]
+script = ExtResource("1_k3rtj")
