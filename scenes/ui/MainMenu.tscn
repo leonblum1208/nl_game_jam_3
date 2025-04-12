@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://lvbytquniiwo"]
+
+[ext_resource type="Script" uid="uid://ciwbrqbqtd3f" path="res://scenes/ui/main_menu.gd" id="1_6jbdy"]
+[ext_resource type="PackedScene" uid="uid://b42g4vgf3pn5a" path="res://scenes/ui/MenuBackground.tscn" id="1_vjtqc"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6jbdy")
+
+[node name="RiverLandMenuBackground" parent="." instance=ExtResource("1_vjtqc")]
+position = Vector2(-1137, -607)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_top = 206.0
+offset_right = 1152.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Game title"
+horizontal_alignment = 1
+
+[node name="How to start" type="Label" parent="CanvasLayer"]
+offset_top = 450.0
+offset_right = 1152.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Press space to start"
+horizontal_alignment = 1
