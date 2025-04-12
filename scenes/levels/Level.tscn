@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwip8cvjt802y"]
 
-[ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="1_mn00y"]
+[ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship1.tscn" id="1_mn00y"]
 
 [node name="Level" type="Node2D"]
 

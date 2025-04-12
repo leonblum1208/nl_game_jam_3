@@ -3,16 +3,20 @@
 [ext_resource type="Script" uid="uid://bqkj7jpowsu5a" path="res://scenes/characters/ship.gd" id="1_gjfe0"]
 [ext_resource type="Texture2D" uid="uid://io3bud0ykm3q" path="res://sprites/ship_side.png" id="2_xl753"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl753"]
-size = Vector2(76.5, 89.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk86d"]
+radius = 6.0
 
 [node name="Ship" type="CharacterBody2D"]
 script = ExtResource("1_gjfe0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(66, 63)
+position = Vector2(-3, 12)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_xl753")
+region_enabled = true
+region_rect = Rect2(0, 0, 184, 136)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 64)
-shape = SubResource("RectangleShape2D_xl753")
+position = Vector2(-2, 18)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pk86d")
