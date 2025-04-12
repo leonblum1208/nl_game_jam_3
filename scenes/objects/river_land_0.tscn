@@ -45,3 +45,4 @@ script = ExtResource("2_d054v")
 
 [node name="Ship" parent="." instance=ExtResource("2_4umai")]
 position = Vector2(-1, 863)
+speed = 100

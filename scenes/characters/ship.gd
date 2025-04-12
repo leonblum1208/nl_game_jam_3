@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var ship_0 = $ShipSprite
 @export var speed = 100
+@onready var path_follow:PathFollowRiver = $"../Path2D/PathFollow2D"
+@onready var sliding_camera:Camera2D = $"../Path2D/PathFollow2D/SlidingWindow"
 
 var is_damage_immune: bool = false
 
@@ -23,6 +25,21 @@ func _physics_process(_delta):
 	select_sprite()
 	move_and_slide()
 	handle_damaging_collisions()
+	influence_camera_speed()
+
+func influence_camera_speed():
+	var diff_vec = global_position - sliding_camera.global_position
+	var camera_direction = Vector2.RIGHT.rotated(sliding_camera.global_rotation)
+	var angle_diff_to_camera = diff_vec.angle_to(camera_direction)
+	var rel_distance_vec = diff_vec/cos(angle_diff_to_camera)
+	var dist_length = rel_distance_vec.length()
+	var speed_up
+	print_debug(dist_length)
+	if abs(angle_diff_to_camera) <= PI/2:
+		speed_up = min((dist_length / 200) + 1, 2)
+	else:
+		speed_up = max(1-(dist_length/400), 0.5)
+	path_follow.speed = path_follow.base_speed * speed_up
 
 func handle_damaging_collisions():
 	for i in get_slide_collision_count():
