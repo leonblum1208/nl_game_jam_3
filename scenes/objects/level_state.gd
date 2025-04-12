@@ -3,9 +3,16 @@ extends Area2D
 var current_level: int
 var level_start_time: int
 var level_end_time: int = 0
+var level_death_time: int = 0
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	GameState.death.connect(Callable(func():
+		level_death_time = Time.get_ticks_msec()
+		Engine.time_scale = 0.2
+		$greyscreen.visible = true
+		))
+	$greyscreen.visible = false
 	current_level = GameState.levelsCompleted.size() + 1
 	level_start_time = Time.get_ticks_msec()
 
@@ -34,3 +41,6 @@ func _process(_delta: float) -> void:
 	if (level_end_time and level_end_time < Time.get_ticks_msec() - 5_000):
 		Engine.time_scale = 1
 		get_tree().change_scene_to_file("res://scenes/ui/BetweenLevelsMenu.tscn")
+	if (level_death_time and level_death_time < Time.get_ticks_msec() - 5_000):
+		Engine.time_scale = 1
+		get_tree().reload_current_scene()

@@ -7,12 +7,16 @@ var health:float = 100:
 	set(value):
 		health = value
 		print("Boats health is: %d" % [health])
+		if (health <= 0):
+			emit_signal("death")
+		emit_signal("game_state_update")
 var upgrades: Dictionary[String, int] = {
 	"Speed": 0,
 	"Money": 0,
 	"HP": 0,
 }
 
+signal death
 signal game_state_update
 
 func print_game_state() -> void: #debugging
@@ -25,7 +29,6 @@ func start_level():
 	health = 100 + 50 * upgrades.get("HP")
 
 func complete_level(moneyEarned: int, hp: int, seconds_under_par: int) -> void:
-	var multiplier = upgrades.get("Money") + 1
 	var level = CompletedLevel.new(moneyEarned, hp, seconds_under_par, upgrades.get("Money"))
 	levelsCompleted.append(level)
 	money += level.total_money

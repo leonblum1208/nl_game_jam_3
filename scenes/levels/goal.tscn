@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cajypui8kbmi0"]
+
+[ext_resource type="Script" uid="uid://dpm2t7h5dy6nl" path="res://scenes/objects/level_state.gd" id="1_uyam1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yp7r"]
+size = Vector2(346, 39)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyam1"]
+bg_color = Color(0, 0, 0, 0.458824)
+
+[node name="Goal" type="Area2D"]
+script = ExtResource("1_uyam1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -9.5)
+shape = SubResource("RectangleShape2D_3yp7r")
+
+[node name="greyscreen" type="Panel" parent="."]
+visible = false
+z_index = 5
+offset_left = -101760.0
+offset_top = -91776.0
+offset_right = 138916.0
+offset_bottom = 92984.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uyam1")
