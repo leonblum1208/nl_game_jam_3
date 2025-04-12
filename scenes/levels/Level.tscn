@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwip8cvjt802y"]
 
-[ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="1_mn00y"]
+[ext_resource type="PackedScene" path="res://scenes/characters/Ship.tscn" id="1_mn00y"]
 [ext_resource type="PackedScene" uid="uid://ca874jt6uoap" path="res://scenes/objects/stone.tscn" id="2_k3rtj"]
 [ext_resource type="PackedScene" uid="uid://d4fjwoea37i2e" path="res://scenes/objects/river_land_1.tscn" id="3_p0fye"]
 
