@@ -32,7 +32,7 @@ func play_sfx(sound: sfx):
 	$SfxPlayer.play()
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("mute")):
 		$MusicPlayer.volume_db = -10 if is_muted() else -80
 		$SfxPlayer.volume_db = 0 if is_muted() else -80

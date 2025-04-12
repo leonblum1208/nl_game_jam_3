@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://blk2tjuuk5hti"]
+[gd_scene load_steps=4 format=4 uid="uid://6s6v0hpko7lh"]
 
 [ext_resource type="TileSet" uid="uid://kvu55xeebqen" path="res://scenes/objects/river_land_tileset.tres" id="1_k6i5m"]
 [ext_resource type="PackedScene" uid="uid://xl3om3lab0ws" path="res://scenes/characters/beaver.tscn" id="2_57q62"]
