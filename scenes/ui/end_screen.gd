@@ -9,6 +9,11 @@ func _ready() -> void:
 	Audio.toggle_mute.connect(Callable(func():
 		$CanvasLayer/MuteIcon.visible = Audio.is_muted()
 		))
+	var levelsCompleted = GameState.levelsCompleted
+	var total_money_earned = 0
+	for level in levelsCompleted:
+		total_money_earned += level.total_money
+	$CanvasLayer/Title.text = $CanvasLayer/Title.text + "%d" % total_money_earned
 
 func _process(delta: float) -> void:
 	blink_timer += delta

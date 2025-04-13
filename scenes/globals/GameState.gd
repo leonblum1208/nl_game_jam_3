@@ -1,6 +1,6 @@
 extends Node
 
-var levelsCompleted: Array
+var levelsCompleted: Array[CompletedLevel]
 var money: int
 var health:float = 50:
 	set(value):
