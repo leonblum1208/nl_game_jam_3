@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnsxcansar7fc"]
+[gd_scene load_steps=8 format=3 uid="uid://bnsxcansar7fc"]
 
 [ext_resource type="Script" uid="uid://bqkj7jpowsu5a" path="res://scenes/characters/ship.gd" id="1_gjfe0"]
 [ext_resource type="Texture2D" uid="uid://f31nji73raio" path="res://sprites/Ship/ship1.png" id="2_xl753"]
+[ext_resource type="Script" uid="uid://cwc8rkt43hy5a" path="res://scenes/characters/healthbar.gd" id="3_hm4so"]
+[ext_resource type="Texture2D" uid="uid://cpx8l7lbfpan8" path="res://scenes/ui/hp_icon.png" id="4_c3tgc"]
+[ext_resource type="Texture2D" uid="uid://drf5vi7yicxty" path="res://scenes/ui/healthbarUnder.png" id="4_ypm4q"]
+[ext_resource type="Texture2D" uid="uid://3nfweiaw1qdj" path="res://scenes/ui/healthbarProgress.png" id="5_c3tgc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xl753"]
 height = 46.0
@@ -17,3 +21,32 @@ texture = ExtResource("2_xl753")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xl753")
+
+[node name="ShipUI" type="CanvasLayer" parent="."]
+script = ExtResource("3_hm4so")
+
+[node name="HealthBarIcon" type="TextureRect" parent="ShipUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 23.0
+offset_right = -220.0
+offset_bottom = 67.0
+grow_horizontal = 0
+texture = ExtResource("4_c3tgc")
+expand_mode = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="ShipUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
+offset_top = 31.0
+offset_right = -140.0
+offset_bottom = 43.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = ExtResource("4_ypm4q")
+texture_progress = ExtResource("5_c3tgc")
