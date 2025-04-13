@@ -80,3 +80,10 @@ position = Vector2(-68, -571)
 
 [node name="MovingLog7" parent="." instance=ExtResource("7_c7epx")]
 position = Vector2(-166, -441)
+
+[node name="Beaver4" parent="." instance=ExtResource("2_57q62")]
+position = Vector2(-54, 60)
+rotation = 3.35857
+
+[node name="MovingLog8" parent="." instance=ExtResource("7_c7epx")]
+position = Vector2(121, -636)
