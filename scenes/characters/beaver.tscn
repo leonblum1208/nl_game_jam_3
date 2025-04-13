@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://xl3om3lab0ws"]
 
 [ext_resource type="Script" uid="uid://bqaoa3faydqhv" path="res://scenes/characters/beaver.gd" id="1_14b8t"]
-[ext_resource type="Texture2D" uid="uid://b8qufk5j6qnko" path="res://sprites/beaver-1.1/PNG/32x32/beaver-NESW.png" id="1_2317d"]
+[ext_resource type="Texture2D" uid="uid://bqu0ibhpuxmmp" path="res://sprites/beaver-1.1/PNG/32x32/beaver-NESW.png" id="1_2317d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14b8t"]
 atlas = ExtResource("1_2317d")
