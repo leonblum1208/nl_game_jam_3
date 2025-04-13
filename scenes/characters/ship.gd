@@ -45,9 +45,6 @@ func influence_camera_speed():
 	var dist_length = -diff_vec.y
 	var max_speed_up = speed/base_speed * 3
 	var speed_up = min(max_speed_up, max(0.75, (dist_length / 100 * speed/base_speed) + 1))
-	print_debug(base_speed)
-	print(speed)
-	print(speed_up)
 
 	#if abs(angle_diff_to_camera) <= PI/2:
 		#speed_up = min((dist_length / 200) + 1, 2)
@@ -66,7 +63,7 @@ func handle_damaging_collisions():
 func handle_damage(damage):
 	if not is_damage_immune and not is_dead:
 		Audio.play_sfx(Audio.sfx.COLLISION)
-		GameState.health -= 10
+		GameState.health -= damage
 		is_damage_immune = true
 		sprite.modulate = Color(1, 0, 0)
 		await get_tree().create_timer(0.4).timeout

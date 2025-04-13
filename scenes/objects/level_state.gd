@@ -23,7 +23,7 @@ func _on_body_entered(body: Node) -> void:
 		Audio.play_sfx(Audio.sfx.YAY)
 		Engine.time_scale = 0.2
 		level_end_time = Time.get_ticks_msec()
-		var seconds_elapsed = (level_end_time - level_start_time) / 1000
+		var seconds_elapsed = (level_end_time - level_start_time) / 1000.
 		match current_level:
 			1:
 				var time_par = 20
@@ -40,7 +40,10 @@ func _on_body_entered(body: Node) -> void:
 func _process(_delta: float) -> void:
 	if (level_end_time and level_end_time < Time.get_ticks_msec() - 5_000):
 		Engine.time_scale = 1
-		get_tree().change_scene_to_file("res://scenes/ui/BetweenLevelsMenu.tscn")
+		if GameState.levelsCompleted.size() == 3:
+			get_tree().change_scene_to_file("res://scenes/ui/EndScreen.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/ui/BetweenLevelsMenu.tscn")
 	if (level_death_time and level_death_time < Time.get_ticks_msec() - 5_000):
 		Engine.time_scale = 1
 		get_tree().reload_current_scene()
