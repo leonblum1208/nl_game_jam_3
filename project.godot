@@ -13,7 +13,7 @@ config_version=5
 config/name="Ship it or sink"
 run/main_scene="uid://lvbytquniiwo"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://bqkj7jpowsu5a"
+config/icon="uid://yarxhrrk8lfc"
 
 [autoload]
 
