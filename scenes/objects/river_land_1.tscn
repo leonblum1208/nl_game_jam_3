@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://kvu55xeebqen" path="res://scenes/objects/river_land_tileset.tres" id="1_7lc10"]
 [ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="2_12tsk"]
 [ext_resource type="Script" uid="uid://b7tweus2rhm1e" path="res://scenes/objects/path_follow_2d.gd" id="2_djs6l"]
-[ext_resource type="PackedScene" path="res://scenes/levels/sliding_window.tscn" id="3_poer0"]
+[ext_resource type="PackedScene" uid="uid://bypbr28dlfhr8" path="res://scenes/levels/sliding_window.tscn" id="3_poer0"]
 [ext_resource type="PackedScene" uid="uid://cajypui8kbmi0" path="res://scenes/levels/goal.tscn" id="5_b20k1"]
 
 [sub_resource type="Curve2D" id="Curve2D_7lc10"]

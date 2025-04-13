@@ -6,7 +6,7 @@
 normal = Vector2(1, 0)
 
 [node name="SlidingWindow" type="Camera2D"]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 script = ExtResource("1_ainvh")
 
 [node name="SlidingWindow" type="StaticBody2D" parent="."]

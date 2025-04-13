@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="2_4umai"]
 [ext_resource type="Script" uid="uid://b7tweus2rhm1e" path="res://scenes/objects/path_follow_2d.gd" id="2_d054v"]
 [ext_resource type="PackedScene" uid="uid://cajypui8kbmi0" path="res://scenes/levels/goal.tscn" id="2_rw4pq"]
-[ext_resource type="PackedScene" path="res://scenes/levels/sliding_window.tscn" id="3_04kny"]
+[ext_resource type="PackedScene" uid="uid://bypbr28dlfhr8" path="res://scenes/levels/sliding_window.tscn" id="3_04kny"]
 
 [sub_resource type="Curve2D" id="Curve2D_d054v"]
 _data = {
