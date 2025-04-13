@@ -63,7 +63,7 @@ func handle_damaging_collisions():
 func handle_damage(damage):
 	if not is_damage_immune and not is_dead:
 		Audio.play_sfx(Audio.sfx.COLLISION)
-		GameState.health -= 10
+		GameState.health -= damage
 		is_damage_immune = true
 		sprite.modulate = Color(1, 0, 0)
 		await get_tree().create_timer(0.4).timeout

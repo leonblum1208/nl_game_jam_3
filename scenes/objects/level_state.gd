@@ -23,7 +23,7 @@ func _on_body_entered(body: Node) -> void:
 		Audio.play_sfx(Audio.sfx.YAY)
 		Engine.time_scale = 0.2
 		level_end_time = Time.get_ticks_msec()
-		var seconds_elapsed = (level_end_time - level_start_time) / 1000
+		var seconds_elapsed = (level_end_time - level_start_time) / 1000.
 		match current_level:
 			1:
 				var time_par = 20
