@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var ship_0 = $ShipSprite
-@export var speed = 100
+@export var base_speed:float = 100
+@export var speed:float = 100
 @onready var path_follow:PathFollowRiver = $"../Path2D/PathFollow2D"
 @onready var sliding_camera:Camera2D = $"../Path2D/PathFollow2D/SlidingWindow"
 
@@ -16,7 +17,7 @@ func _ready():
 	for i in 16:
 		var tex = load("res://sprites/Ship/ship%d.png" % (i+1))
 		boat_images.append(tex)
-	speed += 50 * GameState.upgrades.get("Speed")
+	speed += 30 * GameState.upgrades.get("Speed")
 	GameState.death.connect(Callable(func():
 		print("Ship is dead")
 		Audio.play_sfx(Audio.sfx.DEATH)
@@ -37,15 +38,21 @@ func _physics_process(_delta):
 
 func influence_camera_speed():
 	var diff_vec = global_position - sliding_camera.global_position
-	var camera_direction = Vector2.RIGHT.rotated(sliding_camera.global_rotation)
-	var angle_diff_to_camera = diff_vec.angle_to(camera_direction)
-	var rel_distance_vec = diff_vec/cos(angle_diff_to_camera)
-	var dist_length = rel_distance_vec.length()
-	var speed_up
-	if abs(angle_diff_to_camera) <= PI/2:
-		speed_up = min((dist_length / 200) + 1, 2)
-	else:
-		speed_up = max(1-(dist_length/400), 0.5)
+	#var camera_direction = Vector2.RIGHT.rotated(sliding_camera.global_rotation)
+	#var angle_diff_to_camera = diff_vec.angle_to(camera_direction)
+	#var rel_distance_vec = diff_vec/cos(angle_diff_to_camera)
+	#var dist_length = rel_distance_vec.length()
+	var dist_length = -diff_vec.y
+	var max_speed_up = speed/base_speed * 3
+	var speed_up = min(max_speed_up, max(0.75, (dist_length / 100 * speed/base_speed) + 1))
+	print_debug(base_speed)
+	print(speed)
+	print(speed_up)
+
+	#if abs(angle_diff_to_camera) <= PI/2:
+		#speed_up = min((dist_length / 200) + 1, 2)
+	#else:
+		#speed_up = max(1-(dist_length/400), 0.5)
 	path_follow.speed = path_follow.base_speed * speed_up
 
 func handle_damaging_collisions():
@@ -53,6 +60,8 @@ func handle_damaging_collisions():
 		var collision:KinematicCollision2D = get_slide_collision(i)
 		if collision.get_collider().name == "SlidingWindow":
 			handle_damage(20)
+		else:
+			handle_damage(10)
 
 func handle_damage(damage):
 	if not is_damage_immune and not is_dead:

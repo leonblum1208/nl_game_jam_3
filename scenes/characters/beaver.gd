@@ -10,4 +10,7 @@ var direction = 1
 func _physics_process(delta: float) -> void:
 	if ray_cast_2d.is_colliding():
 		rotation += PI
+		var collidor = ray_cast_2d.get_collider()
+		if collidor.has_method("handle_damage"):
+			collidor.handle_damage(10)
 	position += SPEED * delta * Vector2.RIGHT.rotated(rotation) 

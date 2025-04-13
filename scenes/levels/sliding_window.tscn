@@ -14,5 +14,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="SlidingWindow" type="CollisionShape2D" parent="SlidingWindow"]
-position = Vector2(-270, 0)
+position = Vector2(-220, 0)
 shape = SubResource("WorldBoundaryShape2D_djs6l")
