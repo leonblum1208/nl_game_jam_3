@@ -60,7 +60,6 @@ position = Vector2(-87, -137)
 [node name="Beaver2" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(-68, -107)
 rotation = 2.63545
-scale = Vector2(1, 1)
 
 [node name="Beaver" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(34, -311)
@@ -68,27 +67,22 @@ rotation = -2.30112
 
 [node name="Beaver4" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(-146, -865)
-scale = Vector2(1, 1)
 
 [node name="Beaver6" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(-205, -974)
 rotation = -0.0558503
-scale = Vector2(1, 1)
 
 [node name="Beaver7" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(7, -1108)
 rotation = -0.0558503
-scale = Vector2(1, 1)
 
 [node name="Beaver8" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(-161, -1273)
 rotation = -0.0558503
-scale = Vector2(1, 1)
 
 [node name="Beaver5" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(-206, -1047)
 rotation = 3.11367
-scale = Vector2(1, 1)
 
 [node name="Beaver3" parent="." instance=ExtResource("7_rihcj")]
 position = Vector2(7.00002, -982)
