@@ -43,7 +43,7 @@ func _on_body_entered(body: Node) -> void:
 func _process(_delta: float) -> void:
 	if (level_end_time and level_end_time < Time.get_ticks_msec() - 5_000):
 		Engine.time_scale = 1
-		if GameState.levelsCompleted.size() == 3:
+		if GameState.levelsCompleted.size() == 4:
 			get_tree().change_scene_to_file("res://scenes/ui/EndScreen.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/ui/BetweenLevelsMenu.tscn")
