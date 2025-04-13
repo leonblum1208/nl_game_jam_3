@@ -41,16 +41,16 @@ script = ExtResource("2_d054v")
 [node name="Ship" parent="." instance=ExtResource("2_4umai")]
 position = Vector2(-1, 863)
 
-[node name="Node" type="Node" parent="."]
+[node name="beavers" type="Node" parent="."]
 
-[node name="Beaver4" parent="Node" instance=ExtResource("6_kxtf5")]
+[node name="Beaver4" parent="beavers" instance=ExtResource("6_kxtf5")]
 position = Vector2(-68, -1)
 
-[node name="Beaver3" parent="Node" instance=ExtResource("6_kxtf5")]
+[node name="Beaver3" parent="beavers" instance=ExtResource("6_kxtf5")]
 position = Vector2(-67, 298)
 
-[node name="Beaver2" parent="Node" instance=ExtResource("6_kxtf5")]
+[node name="Beaver2" parent="beavers" instance=ExtResource("6_kxtf5")]
 position = Vector2(39, 423)
 
-[node name="Beaver" parent="Node" instance=ExtResource("6_kxtf5")]
+[node name="Beaver" parent="beavers" instance=ExtResource("6_kxtf5")]
 position = Vector2(-36, 698)
