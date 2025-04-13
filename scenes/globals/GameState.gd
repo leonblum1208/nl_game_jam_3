@@ -1,8 +1,7 @@
 extends Node
 
-var levelsCompleted = []
-var money = 0
-
+var levelsCompleted: Array[CompletedLevel]
+var money: int
 var health:float = 50:
 	set(value):
 		health = value
@@ -10,14 +9,24 @@ var health:float = 50:
 		if (health <= 0):
 			emit_signal("death")
 		emit_signal("game_state_update")
-var upgrades: Dictionary[String, int] = {
-	"Speed": 0,
-	"Money": 0,
-	"HP": 0,
-}
+var upgrades: Dictionary[String, int]
 
 signal death
 signal game_state_update
+
+func _ready() -> void:
+	full_reset()
+
+# should be done only when all levels are over
+func full_reset() -> void:
+	levelsCompleted = []
+	money = 0
+	health = 50
+	upgrades = {
+		"Speed": 0,
+		"Money": 0,
+		"HP": 0,
+	}
 
 func print_game_state() -> void: #debugging
 	print("GAME STATE:")

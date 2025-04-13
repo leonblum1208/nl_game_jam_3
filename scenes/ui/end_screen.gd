@@ -9,6 +9,11 @@ func _ready() -> void:
 	Audio.toggle_mute.connect(Callable(func():
 		$CanvasLayer/MuteIcon.visible = Audio.is_muted()
 		))
+	var levelsCompleted = GameState.levelsCompleted
+	var total_money_earned = 0
+	for level in levelsCompleted:
+		total_money_earned += level.total_money
+	$CanvasLayer/Title.text = $CanvasLayer/Title.text + "%d" % total_money_earned
 
 func _process(delta: float) -> void:
 	blink_timer += delta
@@ -18,5 +23,5 @@ func _process(delta: float) -> void:
 		blink_timer = 0.0
 	
 	if (Input.is_action_just_pressed("ui_select")):
-		Audio.play_level_music()
+		GameState.full_reset()
 		get_tree().change_scene_to_file("res://scenes/ui/MainMenu.tscn")

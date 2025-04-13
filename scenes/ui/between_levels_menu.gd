@@ -72,5 +72,34 @@ func _process(delta: float) -> void:
 	else:
 		if (Input.is_action_just_pressed("ui_select")):
 			GameState.print_game_state()
-	
-	
+	mouse_process(delta)
+
+# Sensitivity of the virtual mouse
+var mouse_speed := 500.0
+
+func mouse_process(delta):
+	# Get joystick axis input
+	var move_x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var move_y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+
+	if move_x != 0 or move_y != 0:
+		var mouse_pos = get_viewport().get_mouse_position()
+		var new_pos = mouse_pos + Vector2(move_x, move_y) * mouse_speed * delta
+		Input.warp_mouse(new_pos)
+
+	if Input.is_action_just_pressed("ui_select"):
+		_emit_left_click()
+
+func _emit_left_click():
+	var click_event := InputEventMouseButton.new()
+	click_event.button_index = MOUSE_BUTTON_LEFT
+	click_event.pressed = true
+	click_event.position = get_viewport().get_mouse_position()
+	Input.parse_input_event(click_event)
+
+	# Release click
+	click_event = InputEventMouseButton.new()
+	click_event.button_index = MOUSE_BUTTON_LEFT
+	click_event.pressed = false
+	click_event.position = get_viewport().get_mouse_position()
+	Input.parse_input_event(click_event)
