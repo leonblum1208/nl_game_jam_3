@@ -5,13 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://xl3om3lab0ws" path="res://scenes/characters/beaver.tscn" id="2_57q62"]
 [ext_resource type="PackedScene" uid="uid://bnsxcansar7fc" path="res://scenes/characters/Ship.tscn" id="3_q1gue"]
 [ext_resource type="Script" uid="uid://b7tweus2rhm1e" path="res://scenes/objects/path_follow_2d.gd" id="4_qm123"]
-[ext_resource type="PackedScene" path="res://scenes/levels/sliding_window.tscn" id="5_1c3bt"]
+[ext_resource type="PackedScene" uid="uid://bypbr28dlfhr8" path="res://scenes/levels/sliding_window.tscn" id="5_1c3bt"]
 
 [sub_resource type="Curve2D" id="Curve2D_c7epx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 866, 0, 0, 0, 0, 0, -335)
+"points": PackedVector2Array(0, 0, 0, 0, 142, 232, -50, 200, 50, -200, -128, -435, -68, 128, 68, -128, 180, -761, 66, 128, -66, -128, 156, -1161, 0, 0, 0, 0, -58, -1371)
 }
-point_count = 2
+point_count = 5
 
 [node name="RiverLand" type="Node2D"]
 
@@ -41,7 +41,7 @@ position = Vector2(44, -40)
 rotation = 3.1155
 
 [node name="Ship" parent="." instance=ExtResource("3_q1gue")]
-position = Vector2(-5.75104, 0)
+position = Vector2(170.249, 255)
 rotation = -1.52729
 scale = Vector2(0.99988, 0.942037)
 skew = 0.0055232
@@ -50,9 +50,10 @@ skew = 0.0055232
 curve = SubResource("Curve2D_c7epx")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-1, 866)
-rotation = -1.56996
+position = Vector2(142, 232)
+rotation = -1.95543
 loop = false
 script = ExtResource("4_qm123")
 
 [node name="SlidingWindow" parent="Path2D/PathFollow2D" instance=ExtResource("5_1c3bt")]
+zoom = Vector2(3, 3)
