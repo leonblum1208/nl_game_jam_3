@@ -15,6 +15,8 @@ var files: Dictionary[sfx, Resource] = {
 	sfx.YAY: load("res://audio/yay.mp3"),
 }
 
+signal toggle_mute
+
 # credit:
 # https://pixabay.com/users/melodyayresgriffiths-27269767/
 # Our Life on the Sea - folk pirate sea fiddle adventure soundtrack
@@ -36,8 +38,9 @@ func play_sfx(sound: sfx):
 
 func _process(_delta: float) -> void:
 	if (Input.is_action_just_pressed("mute")):
-		$MusicPlayer.volume_db = -10 if is_muted() else -80
 		$SfxPlayer.volume_db = 0 if is_muted() else -80
+		$MusicPlayer.volume_db = -10 if is_muted() else -80
+		emit_signal("toggle_mute")
 
 func is_muted() -> bool:
 	return $MusicPlayer.volume_db == -80

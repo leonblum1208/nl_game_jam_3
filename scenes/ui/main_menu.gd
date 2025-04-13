@@ -4,6 +4,12 @@ extends Control
 var blink_timer := 0.0
 var how_to_start_visible := true
 
+func _ready() -> void:
+	$CanvasLayer/MuteIcon.visible = Audio.is_muted()
+	Audio.toggle_mute.connect(Callable(func():
+		$CanvasLayer/MuteIcon.visible = Audio.is_muted()
+		))
+
 func _process(delta: float) -> void:
 	blink_timer += delta
 	if blink_timer >= blink_interval:
