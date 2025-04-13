@@ -21,7 +21,7 @@ func _ready():
 	for i in 16:
 		var tex = load("res://sprites/Ship/ship%d.png" % (i+1))
 		boat_images.append(tex)
-	speed += 30 * GameState.upgrades.get("Speed")
+	speed += 20 * GameState.upgrades.get("Speed")
 	GameState.death.connect(Callable(func():
 		print("Ship is dead")
 		Audio.play_sfx(Audio.sfx.DEATH)

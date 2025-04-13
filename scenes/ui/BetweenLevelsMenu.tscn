@@ -57,7 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "Press space to continue"
+text = "Press space or triangle to continue"
 horizontal_alignment = 1
 
 [node name="Upgrades" type="CanvasLayer" parent="."]
@@ -157,7 +157,7 @@ offset_right = -624.0
 offset_bottom = -424.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Money
+text = "More Cargo
 
 Cost: 0
 "
