@@ -18,5 +18,5 @@ func _process(delta: float) -> void:
 		blink_timer = 0.0
 	
 	if (Input.is_action_just_pressed("ui_select")):
-		Audio.play_level_music()
+		GameState.full_reset()
 		get_tree().change_scene_to_file("res://scenes/ui/MainMenu.tscn")
