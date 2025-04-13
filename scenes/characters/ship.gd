@@ -53,6 +53,8 @@ func handle_damaging_collisions():
 		var collision:KinematicCollision2D = get_slide_collision(i)
 		if collision.get_collider().name == "SlidingWindow":
 			handle_damage(20)
+		else:
+			handle_damage(10)
 
 func handle_damage(damage):
 	if not is_damage_immune and not is_dead:
