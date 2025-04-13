@@ -26,7 +26,7 @@ func _ready() -> void:
 	_on_game_state_update()
 
 func _on_game_state_update() -> void:
-	$Upgrades/MoneyText.text = "Money: %d" % [GameState.money]
+	$Upgrades/MoneyText.text = "More Cargo: %d" % [GameState.money]
 	render_upgrades()
 
 func render_summary() -> void:
