@@ -74,7 +74,7 @@ func handle_damage(damage):
 		GameState.health -= damage
 		is_damage_immune = true
 		sprite.modulate = Color(1, 0, 0)
-		await get_tree().create_timer(400).timeout
+		await get_tree().create_timer(0.4).timeout
 		sprite.modulate = Color(1, 1, 1, 1)
 		await get_tree().create_timer(0.4).timeout
 		sprite.modulate = Color(1, 0, 0)
