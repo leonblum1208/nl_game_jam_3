@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnsxcansar7fc"]
 
 [ext_resource type="Script" uid="uid://bqkj7jpowsu5a" path="res://scenes/characters/ship.gd" id="1_gjfe0"]
-[ext_resource type="Texture2D" uid="uid://bv1re3lar1qnb" path="res://sprites/Ship/ship1.png" id="2_xl753"]
+[ext_resource type="Texture2D" uid="uid://ce5uuuoerb6ox" path="res://sprites/Ship/ship1.png" id="2_xl753"]
 [ext_resource type="Script" uid="uid://cwc8rkt43hy5a" path="res://scenes/characters/healthbar.gd" id="3_hm4so"]
-[ext_resource type="Texture2D" uid="uid://xrdunpg8nlii" path="res://scenes/ui/hp_icon.png" id="4_c3tgc"]
-[ext_resource type="Texture2D" uid="uid://3uom0qwjexi3" path="res://scenes/ui/healthbarUnder.png" id="4_ypm4q"]
-[ext_resource type="Texture2D" uid="uid://cedxpqex2uit6" path="res://scenes/ui/healthbarProgress.png" id="5_c3tgc"]
+[ext_resource type="Texture2D" uid="uid://3alevqac80c0" path="res://scenes/ui/hp_icon.png" id="4_c3tgc"]
+[ext_resource type="Texture2D" uid="uid://c2ft6ce8fstwx" path="res://scenes/ui/healthbarUnder.png" id="4_ypm4q"]
+[ext_resource type="Texture2D" uid="uid://bwer7qam2iyym" path="res://scenes/ui/healthbarProgress.png" id="5_c3tgc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xl753"]
 radius = 7.0

@@ -3,7 +3,7 @@ extends Node
 var levelsCompleted = []
 var money = 0
 
-var health:float = 100:
+var health:float = 50:
 	set(value):
 		health = value
 		print("Boats health is: %d" % [health])
@@ -26,7 +26,7 @@ func print_game_state() -> void: #debugging
 	print("")
 
 func start_level():
-	health = 100 + 50 * upgrades.get("HP")
+	health = 50 + 30 * upgrades.get("HP")
 
 func complete_level(moneyEarned: int, hp: int, seconds_under_par: int) -> void:
 	var level = CompletedLevel.new(moneyEarned, hp, seconds_under_par, upgrades.get("Money"))
