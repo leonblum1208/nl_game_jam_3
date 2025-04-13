@@ -2,7 +2,11 @@ extends CharacterBody2D
 
 @onready var ship_0 = $ShipSprite
 @export var base_speed:float = 100
-@export var speed:float = 100
+var taken_damage_speed: float
+@export var speed:float = 100:
+	set(value):
+		speed = value
+		taken_damage_speed = value / 3
 @onready var path_follow:PathFollowRiver = $"../Path2D/PathFollow2D"
 @onready var sliding_camera:Camera2D = $"../Path2D/PathFollow2D/SlidingWindow"
 
@@ -27,10 +31,13 @@ func _ready():
 
 func _physics_process(_delta):
 	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
-	velocity = input_direction * speed
+	if is_damage_immune:
+		velocity = input_direction * taken_damage_speed
+	else:
+		velocity = input_direction * speed
 	if velocity.length() > 0:
 		rotation = velocity.angle() + deg_to_rad(90)
+	
 	select_sprite()
 	move_and_slide()
 	handle_damaging_collisions()
@@ -55,6 +62,7 @@ func influence_camera_speed():
 func handle_damaging_collisions():
 	for i in get_slide_collision_count():
 		var collision:KinematicCollision2D = get_slide_collision(i)
+		collision.get_normal()
 		if collision.get_collider().name == "SlidingWindow":
 			handle_damage(20)
 		else:
