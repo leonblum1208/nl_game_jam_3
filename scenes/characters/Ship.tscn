@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cedxpqex2uit6" path="res://scenes/ui/healthbarProgress.png" id="5_c3tgc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xl753"]
-height = 46.0
+radius = 7.0
+height = 40.0
 
 [node name="Ship" type="CharacterBody2D"]
 z_index = 2

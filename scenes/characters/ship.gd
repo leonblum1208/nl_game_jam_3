@@ -45,9 +45,6 @@ func influence_camera_speed():
 	var dist_length = -diff_vec.y
 	var max_speed_up = speed/base_speed * 3
 	var speed_up = min(max_speed_up, max(0.75, (dist_length / 100 * speed/base_speed) + 1))
-	print_debug(base_speed)
-	print(speed)
-	print(speed_up)
 
 	#if abs(angle_diff_to_camera) <= PI/2:
 		#speed_up = min((dist_length / 200) + 1, 2)
