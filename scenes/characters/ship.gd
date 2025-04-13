@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var sliding_camera:Camera2D = $"../Path2D/PathFollow2D/SlidingWindow"
 
 var is_damage_immune: bool = false
+var is_dead: bool = false
 
 @onready var sprite = $ShipSprite
 var boat_images : Array[Texture2D] = []
@@ -15,6 +16,13 @@ func _ready():
 	for i in 16:
 		var tex = load("res://sprites/Ship/ship%d.png" % (i+1))
 		boat_images.append(tex)
+	speed += 50 * GameState.upgrades.get("Speed")
+	GameState.death.connect(Callable(func():
+		print("Ship is dead")
+		Audio.play_sfx(Audio.sfx.DEATH)
+		speed = 0
+		is_dead = true
+		))
 
 func _physics_process(_delta):
 	var input_direction: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -34,7 +42,6 @@ func influence_camera_speed():
 	var rel_distance_vec = diff_vec/cos(angle_diff_to_camera)
 	var dist_length = rel_distance_vec.length()
 	var speed_up
-	print_debug(dist_length)
 	if abs(angle_diff_to_camera) <= PI/2:
 		speed_up = min((dist_length / 200) + 1, 2)
 	else:
@@ -48,7 +55,8 @@ func handle_damaging_collisions():
 			handle_damage(20)
 
 func handle_damage(damage):
-	if not is_damage_immune:
+	if not is_damage_immune and not is_dead:
+		Audio.play_sfx(Audio.sfx.COLLISION)
 		GameState.health -= 10
 		is_damage_immune = true
 		sprite.modulate = Color(1, 0, 0)

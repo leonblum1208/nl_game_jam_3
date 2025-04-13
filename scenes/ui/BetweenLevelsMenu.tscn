@@ -16,7 +16,6 @@ script = ExtResource("1_uf7kb")
 position = Vector2(-1262, -589)
 
 [node name="Summary" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Title" type="Label" parent="Summary"]
 anchors_preset = 15
@@ -28,10 +27,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "Yay!"
+text = "Yaaaay! ^_^"
 horizontal_alignment = 1
 
-[node name="Money earned" type="Label" parent="Summary"]
+[node name="MoneySummary" type="Label" parent="Summary"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -41,11 +40,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "Cargo sold: 500
-HP bonus: 200
-Time bonus: 100
+text = "Cargo sold: ???
+HP bonus: ???
+Time bonus: ???
 
-Total money earned: 800"
+Total money earned: ???"
 horizontal_alignment = 1
 
 [node name="Continue" type="Label" parent="Summary"]
@@ -62,6 +61,7 @@ text = "Press space to continue"
 horizontal_alignment = 1
 
 [node name="Upgrades" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Title" type="Label" parent="Upgrades"]
 anchors_preset = 15

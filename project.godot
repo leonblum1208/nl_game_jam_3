@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Shipping simulator"
 run/main_scene="uid://lvbytquniiwo"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://yarxhrrk8lfc"
 
 [autoload]
 
