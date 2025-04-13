@@ -50,3 +50,4 @@ func _process(_delta: float) -> void:
 	if (level_death_time and level_death_time < Time.get_ticks_msec() - 5_000):
 		Engine.time_scale = 1
 		get_tree().reload_current_scene()
+		GameState.start_level()
